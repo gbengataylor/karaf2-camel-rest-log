@@ -12,9 +12,9 @@ It also shows how Karaf assembly files can be overriden using resources from `sr
     #log4j.logger.org.apache.camel=DEBUG
 
 
-## Pre-requisites 
+## Pre-requisites
 
-### Download the required FIS 2.0 Karaf images 
+### Download the required FIS 2.0 Karaf images
 
     oc create -n openshift -f https://raw.githubusercontent.com/jboss-fuse/application-templates/fis-2.0.x.redhat-R6/fis-image-streams.json
 
@@ -28,7 +28,7 @@ Admin rights are required to create in the openshift namespace
 if it already exists
 
     oc replace -n openshift -f   karaf2-camel-rest-log-template.yaml
-    		
+
 Admin rights are required to create/replace in the openshift namespace
 
 ## Running the example in OpenShift using template
@@ -38,12 +38,9 @@ Create the following environment variables. Make the appropriate modifications
     export OPENSHIFT_CAMEL_NO_AMQ_APPLICATION_NAME=fis-karaf-camel-rest-log-route
 
     export GIT_REPO_CAMEL_NO_AMQ=https://github.com/gbengataylor/karaf2-camel-rest-log.git
-    
+
     export IMAGE_BUILD_VERSION=2.0
 
-Deploy the camel route 
+Deploy the camel route
 
-    oc new-app --template= karaf2-camel-rest-log app=${OPENSHIFT_CAMEL_NO_AMQ_APPLICATION_NAME} --param  APP_NAME=${OPENSHIFT_CAMEL_NO_AMQ_APPLICATION_NAME} --param GIT_REPO=${GIT_REPO_CAMEL_NO_AMQ}  --param SERVICE_NAME=${OPENSHIFT_CAMEL_NO_AMQ_APPLICATION_NAME}  --param BUILDER_VERSION=${IMAGE_BUILD_VERSION} --param GIT_REF=master  -l app=${OPENSHIFT_CAMEL_NO_AMQ_APPLICATION_NAME}
-
-
-
+    oc new-app --template=s2i-karaf2-camel-rest-log app=${OPENSHIFT_CAMEL_NO_AMQ_APPLICATION_NAME} --param  APP_NAME=${OPENSHIFT_CAMEL_NO_AMQ_APPLICATION_NAME} --param GIT_REPO=${GIT_REPO_CAMEL_NO_AMQ}  --param SERVICE_NAME=${OPENSHIFT_CAMEL_NO_AMQ_APPLICATION_NAME}  --param BUILDER_VERSION=${IMAGE_BUILD_VERSION} --param GIT_REF=master  -l app=${OPENSHIFT_CAMEL_NO_AMQ_APPLICATION_NAME}
