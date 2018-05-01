@@ -43,7 +43,7 @@
           route is doing.
         -->
         <route id="log-route">
-            <from id="route-timer" uri="timer:foo?period=5s"/>
+            <from id="route-timer" uri="timer:foo?period=15m"/>
             <setBody id="route-set-body">
                 <simple>Hello from Camel!</simple>
             </setBody>
