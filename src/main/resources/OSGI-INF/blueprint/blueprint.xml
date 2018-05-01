@@ -24,7 +24,7 @@
     -->
     <camelContext id="log-example-context" xmlns="http://camel.apache.org/schema/blueprint">
 
-    <restConfiguration component="servlet" port="8181" bindingMode="auto" contextPath="/karaf2-camel-rest-log">
+    <restConfiguration component="servlet" port="8181" bindingMode="json" contextPath="/karaf2-camel-rest-log">
           <dataFormatProperty key="prettyPrint" value="true"/>
    </restConfiguration>
 
