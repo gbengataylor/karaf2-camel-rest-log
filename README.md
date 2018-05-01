@@ -4,7 +4,7 @@
 
 This quickstart shows a simple Apache Camel Karaf 2 application deployed on OpenShift that logs a message to the server log every 15th second.
 
-It also exposes a rest endpoint at /karaf2-camel-rest-log/say/hello that returns a response and writes a message to the server log
+It also exposes a rest endpoint at `/karaf2-camel-rest-log/say/hello` that returns a response and writes a message to the server log
 
 This example is implemented using solely the XML DSL (there is no Java code). The source code is provided in the following XML file `src/main/resources/OSGI-INF/blueprint/camel-log.xml`.
 It also shows how Karaf assembly files can be overriden using resources from `src/main/resources/assembly/`. In the included sample log file `etc/org.ops4j.pax.logging.cfg` uncommenting the following line will enable verbose Camel log messages
