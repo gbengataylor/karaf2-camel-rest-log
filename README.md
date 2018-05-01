@@ -1,10 +1,10 @@
 
-forked and modified from [quickstart](https://github.com/fabric8-quickstarts/karaf2-camel-log)
 
+# Karaf 2 Camel Rest Log QuickStart
 
-# Karaf 2 Camel Log QuickStart
+This quickstart shows a simple Apache Camel Karaf 2 application deployed on OpenShift that logs a message to the server log every 15th second.
 
-This quickstart shows a simple Apache Camel Karaf 2 application deployed on OpenShift that logs a message to the server log every 5th second.
+It also exposes a rest endpoint at /karaf2-camel-rest-log/say/hello that returns a response and writes a message to the server log
 
 This example is implemented using solely the XML DSL (there is no Java code). The source code is provided in the following XML file `src/main/resources/OSGI-INF/blueprint/camel-log.xml`.
 It also shows how Karaf assembly files can be overriden using resources from `src/main/resources/assembly/`. In the included sample log file `etc/org.ops4j.pax.logging.cfg` uncommenting the following line will enable verbose Camel log messages
@@ -21,7 +21,7 @@ It also shows how Karaf assembly files can be overriden using resources from `sr
 Admin rights are required to create in the openshift namespace
 
 
-### Upload the template 
+### Upload the template to OpenShift
 
     oc create -n openshift -f karaf2-camel-rest-log-template.json
 
