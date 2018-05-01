@@ -67,6 +67,8 @@
       <artifactId>camel-blueprint</artifactId>
 
     </dependency>
+      
+      <!--
         <dependency>
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-jackson</artifactId>
@@ -79,7 +81,7 @@
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-servlet </artifactId>
     </dependency>
-
+-->
     <!-- Karaf microcontainer dependencies -->
     <dependency>
       <!-- scope is compile so all features (there is only one) are installed into startup.properties,
