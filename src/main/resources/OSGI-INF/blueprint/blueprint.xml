@@ -4,16 +4,18 @@
     
   
      <reference id="httpService" interface="org.osgi.service.http.HttpService"/>
-     <bean id="camelServlet" class="org.apache.camel.component.servlet.CamelHttpTransportServlet"/>
      
    <bean class="org.apache.camel.component.servlet.osgi.OsgiServletRegisterer"
         init-method="register"
-        destroy-method="unregister">
-    <property name="alias" value="/simple-camel-log-karaf/rest"/>
+        destroy-method="unregister"
+	 id="servletRegisterer">
+    <property name="alias" value="/karaf2-camel-rest-log"/>
     <property name="httpService" ref="httpService"/>
     <property name="servlet" ref="camelServlet"/>
   </bean>
  
+ <bean class="org.apache.camel.component.servlet.CamelHttpTransportServlet" id="camelServlet"/>
+
     <!--
       The namespace for the camelContext element in Blueprint is 'http://camel.apache.org/schema/blueprint'.
 
@@ -22,11 +24,11 @@
     -->
     <camelContext id="log-example-context" xmlns="http://camel.apache.org/schema/blueprint">
 
-    <restConfiguration component="servlet" port="8181" bindingMode="auto" contextPath="/simple-camel-log-karaf/rest">
+    <restConfiguration component="servlet" port="8181" bindingMode="auto" contextPath="/karaf2-camel-rest-log">
           <dataFormatProperty key="prettyPrint" value="true"/>
    </restConfiguration>
 
-		<rest path="/route">
+		<rest path="/say">
 			<get uri="/hello">
 				<to uri="direct:hello" />
 			</get>
