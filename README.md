@@ -23,11 +23,11 @@ Admin rights are required to create in the openshift namespace
 
 ### Upload the template to OpenShift
 
-    oc create -n openshift -f karaf2-camel-rest-log-template.json
+    oc create -n openshift -f karaf2-camel-rest-log-template.yaml
 
 if it already exists
 
-    oc replace -n openshift -f   karaf2-camel-rest-log-template.json
+    oc replace -n openshift -f   karaf2-camel-rest-log-template.yaml
     		
 Admin rights are required to create/replace in the openshift namespace
 
