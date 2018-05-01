@@ -26,14 +26,14 @@
     <maven-install-plugin.version>2.5.2</maven-install-plugin.version>
     <fabric8.maven.plugin.version>3.5.17</fabric8.maven.plugin.version>
 
-
+<!--
      <camel.osgi.import.pkg>
       *
     </camel.osgi.import.pkg>
     <camel.osgi.export.pkg>
       *
     </camel.osgi.export.pkg>
-
+-->
   </properties>
 
     <repositories>
