@@ -2,7 +2,7 @@
 
 # Karaf 2 Camel Rest Log QuickStart
 
-This quickstart shows a simple Apache Camel Karaf 2 application deployed on OpenShift that logs a message to the server log every 15th minute.
+This quickstart shows a simple Apache Camel Karaf 2 application deployed on OpenShift that logs a message to the server log every 10th minute.
 
 It also exposes a rest endpoint at `/karaf2-camel-rest-log/say/hello` that returns a response and writes a message to the server log
 
